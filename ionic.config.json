@@ -1,0 +1,7 @@
+{
+  "name": "AngularFlare",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

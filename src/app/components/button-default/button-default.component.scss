@@ -1,0 +1,72 @@
+@import "../../../../styles/variables.scss";
+
+button {
+  /* Button:onClickLoginGoogle */
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 21;
+  gap: 20px;
+
+  width: 380px;
+  height: 65px;
+
+  background: #ffffff;
+  border: 3px solid rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 0;
+  p {
+    /* Text */
+
+    margin: 0 auto;
+    width: max-content;
+    height: fit-content;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 25px;
+    text-align: center;
+
+    color: $color-text;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+
+  img {
+    /* Frame Icon */
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    gap: 10px;
+
+    margin: 0 auto;
+    width: 33px;
+    height: 33px;
+
+    background: #e6e6e6;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+}
