@@ -13,4 +13,5 @@ export class ButtonDefaultComponent {
   @Input() buttonText: string = '';
   @Input() buttonTextAlt: string = '';
   @Input() buttonIconPath: string = '';
+  @Input() buttonOnClick: Function = () => {};
 }
