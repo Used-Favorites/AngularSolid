@@ -7,20 +7,12 @@ export const routes: Routes = [
       import('./pages/home/home.page').then((m) => m.HomePage),
   },
   {
-    path: 'message/:id',
-    loadComponent: () =>
-      import('./pages/view-message/view-message.page').then(
-        (m) => m.ViewMessagePage
-      ),
-  },
-  {
     path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
+    loadComponent: () =>
+      import('./pages/onboarding/onboarding.page').then((m) => m.OnboardingPage),
   },
   {
     path: 'login',
-    loadComponent: () =>
-      import('./pages/login/login.page').then((m) => m.LoginPage),
+    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
   },
 ];

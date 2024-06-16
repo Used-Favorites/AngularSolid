@@ -1,0 +1,47 @@
+@import "../../../styles/variables.scss";
+
+ion-content {
+  --ion-background-color: #263238;
+
+  div {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  ion-img {
+    height: 135px;
+  }
+  ion-card-title {
+    /* label:text */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: fit-content;
+    height: fit-content;
+
+    color: $light;
+  }
+}
+
+ion-footer {
+  /* Buttons Selects */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 18px;
+  gap: 25px;
+  background: transparent;
+
+  margin: 0 auto;
+
+  /* Blue/Darker */
+  border-radius: 16px 16px 0px 0px !important;
+}
