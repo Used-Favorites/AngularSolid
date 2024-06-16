@@ -1,6 +1,6 @@
 @import "../../../styles/variables.scss";
 
-button {
+ion-button {
   /* Button:onClickLoginGoogle */
 
   box-sizing: border-box;
@@ -10,13 +10,12 @@ button {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 21;
-  gap: 20px;
+  gap: 2%;
 
-  width: 380px;
-  height: 65px;
+  width: max-content;
+  max-width: min-content;
 
-  background: #ffffff;
+  --background: #ffffff;
   border: 3px solid rgba(0, 0, 0, 0.15);
   border-radius: 16px;
 
@@ -25,7 +24,7 @@ button {
   order: 0;
   flex-grow: 0;
   z-index: 0;
-  p {
+  ion-title {
     /* Text */
 
     margin: 0 auto;
@@ -46,7 +45,7 @@ button {
     flex-grow: 0;
   }
 
-  img {
+  ion-img {
     /* Frame Icon */
 
     /* Auto layout */
@@ -55,7 +54,6 @@ button {
     justify-content: space-between;
     align-items: center;
     padding: 6px;
-    gap: 10px;
 
     margin: 0 auto;
     width: 33px;

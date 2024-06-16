@@ -1,8 +1,8 @@
-<button (click)="buttonOnClick()">
-  <img
+<ion-button (click)="buttonOnClick()">
+  <ion-img
     [src]="buttonIconPath"
     [alt]="buttonTextAlt"
     [style.display]="buttonIconPath ? 'block' : 'none'"
   />
-  <p>{{ buttonText }}</p>
-</button>
+  <ion-title>{{ buttonText }}</ion-title>
+</ion-button>
