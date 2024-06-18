@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<main>
+    <hr>
+    <div class="heading">
+        <span><b>Inscrever-se</b></span>
+        <p>Crie uma conta para começar</p>
+    </div>
+    <br>
+    <form>
+        <div class="form-group">
+          <div>
+            <label for="nome"><b>Nome</b></label><br>
+            <input type="text" id="nome" [(ngModel)]="nome" name="nome" placeholder="João..." required>
+          </div>
+          <br>
+          <div>
+            <label for="email"><b>Endereço de email</b></label><br>
+            <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="john_joe@gmail.com" required>
+          </div>
+          <br>
+          <div>
+            <label for="senha"><b>Senha</b></label>
+            <br>
+            <input type="password" name="senha" [(ngModel)]="senha" name="senha" placeholder="Crie uma Senha" required><br><br>
+            <input type="password" name="senha" [(ngModel)]="confirmacaoSenha" name="senha" placeholder="Confirme sua senha" required>
+          </div>
+    
+          <p>Já tem cadastro? <strong>Entre agora</strong></p>
+          <div class="cbxItem">
+            <input id="item" type="checkbox" [(ngModel)]="termosAceitos" name="item">
+            <label for="item">Li e concordo com os <strong>Termos e Condições</strong> e a <strong>Política de Privacidade</strong></label>
+          </div>
+          <br>
+          <div class="btnCadastro">
+            <button type="button" (click)="cadastrar()">Cadastra-se</button>
+          </div>
+        </div>
+      </form>
+</main>
