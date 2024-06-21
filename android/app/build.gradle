@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "com.Angular.Solid"
+    namespace "com.angular.solid"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.Angular.Solid"
+        applicationId "com.angular.solid"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

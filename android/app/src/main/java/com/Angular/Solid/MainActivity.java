@@ -1,4 +1,4 @@
-package com.Angular.Solid;
+package com.angular.solid;
 
 import com.getcapacitor.BridgeActivity;
 
