@@ -11,9 +11,7 @@
   },
   "private": true,
   "integrations": {
-    "capacitor": {},
-    "cordova": {},
-    "electron": {}
+    "capacitor": {}
   },
   "type": "angular"
 }
