@@ -3,7 +3,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'com.angular.solid',
   appName: 'AngularSolid',
-  webDir: 'dist',
+  webDir: 'dist/browser',
   cordova: {
     preferences: {
       ScrollEnabled: 'false',
