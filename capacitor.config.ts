@@ -4,7 +4,6 @@ const config: CapacitorConfig = {
   appId: 'com.angular.solid',
   appName: 'AngularSolid',
   webDir: 'dist',
-  bundledWebRuntime: false,
   cordova: {
     preferences: {
       ScrollEnabled: 'false',
