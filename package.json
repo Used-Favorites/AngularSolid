@@ -71,8 +71,12 @@
   },
   "description": "This is a project developed by a group of students from Cotuca, created for Android and iOS platforms. It uses Angular, Capacitor, and Ionic technologies to provide a robust and efficient mobile app experience.",
   "browserslist": [
-    "last 1 version",
-    "> 1%",
-    "not dead"
+    "Chrome >=61",
+    "ChromeAndroid >=61",
+    "Firefox >=63",
+    "Firefox ESR",
+    "Edge >=79",
+    "Safari >=13",
+    "iOS >=13"
   ]
 }
