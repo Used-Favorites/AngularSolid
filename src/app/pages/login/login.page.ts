@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EmailValidator, FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import {
   IonContent,
   IonHeader,
@@ -13,15 +14,14 @@ import {
   IonLabel,
   IonButton,
   IonInput,
-  IonIcon,
-} from '@ionic/angular/standalone';
+  IonIcon, IonLoading } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [
+  imports: [IonLoading, 
     IonIcon,
     IonInput,
     IonButton,
@@ -35,7 +35,7 @@ import {
     IonTitle,
     IonToolbar,
     CommonModule,
-    FormsModule,
+    FormsModule,   
   ],
 })
 export class LoginPage implements OnInit {
@@ -43,16 +43,20 @@ export class LoginPage implements OnInit {
   userPassword: any;
   hide = true;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   login() {
     console.log('Login');
     console.log(this.userEmailAddress);
     console.log(this.userPassword);
+    this.router.navigate(['/home'])
   }
 
-  register() {
-    throw new Error('Method not implemented.');
+   register() {
+    console.log('Register');
+    this.router.navigate(['/sign-up']);
+
+
   }
 
   handleKeyDown(event: KeyboardEvent, redirect: string) {
