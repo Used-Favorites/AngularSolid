@@ -17,6 +17,7 @@ import {
   IonIcon,
 } from '@ionic/angular/standalone';
 import { ButtonDefaultComponent } from 'src/app/components/button-default/button-default.component';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'page-onboarding',
@@ -43,7 +44,12 @@ import { ButtonDefaultComponent } from 'src/app/components/button-default/button
   ],
 })
 export class OnboardingPage implements OnInit {
-  constructor() {}
+  constructor(private navCtrl: NavController) {}
+
+  redirectToLoginPage() {
+    console.log('Redirect to login page');
+    this.navCtrl.navigateForward('/login');
+  }
 
   ngOnInit() {}
 }

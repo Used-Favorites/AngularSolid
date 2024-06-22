@@ -13,5 +13,8 @@
     buttonIconPath="../../../assets/google.svg"
     buttonText="Continuar com Google"
   />
-  <app-button-default buttonText="Outra opções" />
+  <app-button-default
+    buttonText="Outra opções"
+    (click)="redirectToLoginPage()"
+  />
 </ion-footer>

@@ -29,6 +29,7 @@ modules/.settings
 modules/.vscode
 .vimrc
 .nvimrc
+*.env
 
 # Don't check in secret files
 *secret.js
@@ -62,7 +63,3 @@ aio/content/examples/.DS_Store
 
 # Ignore cache created with the Angular CLI.
 .angular/
-
-# Ignore builds android and ios
-android/
-ios/
