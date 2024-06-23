@@ -1,41 +1,25 @@
-<ion-content>
-  <ion-card id="card-welcome">
+<ion-content [fullscreen]="true">
+  <ion-header>
     <ion-title>Seu melhor espaço aqui!</ion-title>
-    <ion-img src="../../../assets/image_login.svg"></ion-img>
-  </ion-card>
-  <ion-card-content id="card-input">
-    <ion-item class="field" style="--background: transparent" lines="none">
-      <ion-input
-        id="email"
-        type="email"
-        [(ngModel)]="userEmailAddress"
-        aria-placeholder="E-mail"
-      ></ion-input>
+    <ion-img src="../../../assets/image_login.svg" />
+  </ion-header>
+  <ion-list>
+    <ion-item lines="none">
+      <ion-input placeholder="favorite@sigma.com" type="email" fill="outline"
+        >Endereço de Email</ion-input
+      >
     </ion-item>
-    <ion-item class="field" style="--background: transparent" lines="none">
-      <ion-input
-        id="password"
-        [type]="hide ? 'password' : 'text'"
-        [(ngModel)]="userPassword"
-      ></ion-input>
-      <ion-icon
-        name="eye"
-        slot="end"
-        (click)="togglePasswordVisibility()"
-        (keydown)="handleKeyDown($event, 'togglePasswordVisibility')"
-      ></ion-icon>
+    <ion-item lines="none">
+      <ion-input type="password" placeholder="Senha" fill="outline">
+        Senha
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
     </ion-item>
-    <ion-button
-      expand="block"
-      (click)="login()"
-      (keydown)="handleKeyDown($event, 'login')"
-      >Entrar</ion-button
-    >
-    <ion-button
-      expand="block"
-      (click)="register()"
-      (keydown)="handleKeyDown($event, 'register')"
-      >Cadastrar</ion-button
-    >
-  </ion-card-content>
+  </ion-list>
+  <ion-button expand="block" fill="outline" routerLink="/signup"
+    >Entrar</ion-button
+  >
+  <ion-label>
+    <p>não possui uma conta? <a href="/signup">Inscreva-se</a></p>
+  </ion-label>
 </ion-content>

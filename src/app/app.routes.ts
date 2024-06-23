@@ -9,14 +9,18 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./pages/onboarding/onboarding.page').then((m) => m.OnboardingPage),
+      import('./pages/onboarding/onboarding.page').then(
+        (m) => m.OnboardingPage
+      ),
   },
   {
     path: 'login',
-    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
-  },  {
-    path: 'sign-up',
-    loadComponent: () => import('./pages/Sign-Up/sign-up/sign-up.page').then( m => m.SignUpPage)
+    loadComponent: () =>
+      import('./pages/login/login.page').then((m) => m.LoginPage),
   },
-
+  {
+    path: 'signup',
+    loadComponent: () =>
+      import('./pages/signup/sign-up.page').then((m) => m.SignUpPage),
+  },
 ];

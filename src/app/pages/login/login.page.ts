@@ -14,14 +14,20 @@ import {
   IonLabel,
   IonButton,
   IonInput,
-  IonIcon, IonLoading } from '@ionic/angular/standalone';
+  IonIcon,
+  IonLoading,
+  IonList,
+  IonInputPasswordToggle,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonLoading, 
+  imports: [
+    IonList,
+    IonLoading,
     IonIcon,
     IonInput,
     IonButton,
@@ -34,50 +40,13 @@ import {
     IonHeader,
     IonTitle,
     IonToolbar,
+    IonInputPasswordToggle,
     CommonModule,
-    FormsModule,   
+    FormsModule,
   ],
 })
 export class LoginPage implements OnInit {
-  userEmailAddress: any;
-  userPassword: any;
-  hide = true;
-
   constructor(private router: Router) {}
-
-  login() {
-    console.log('Login');
-    console.log(this.userEmailAddress);
-    console.log(this.userPassword);
-    this.router.navigate(['/home'])
-  }
-
-   register() {
-    console.log('Register');
-    this.router.navigate(['/sign-up']);
-
-
-  }
-
-  handleKeyDown(event: KeyboardEvent, redirect: string) {
-    if (event.key === 'Enter') {
-      switch (redirect) {
-        case 'login':
-          this.login();
-          break;
-        case 'register':
-          this.register();
-          break;
-        case 'togglePasswordVisibility':
-          this.togglePasswordVisibility();
-          break;
-      }
-    }
-  }
-
-  togglePasswordVisibility() {
-    this.hide = !this.hide;
-  }
 
   ngOnInit() {}
 }

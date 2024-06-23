@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "dev": "ng serve --open --host=localhost --configuration development",
+    "dev": "ng serve --open --host=0.0.0.0 --configuration development",
     "serve:ssr:angularflare": "node dist/angularflare/server/server.mjs",
     "ios:dev": "npm run build && npx cap add ios && npx cap run ios",
     "android:dev": "npm run build && npx cap add android && npx cap run android"
@@ -69,14 +69,5 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "^5.4.3"
   },
-  "description": "This is a project developed by a group of students from Cotuca, created for Android and iOS platforms. It uses Angular, Capacitor, and Ionic technologies to provide a robust and efficient mobile app experience.",
-  "browserslist": [
-    "Chrome >=61",
-    "ChromeAndroid >=61",
-    "Firefox >=63",
-    "Firefox ESR",
-    "Edge >=79",
-    "Safari >=13",
-    "iOS >=13"
-  ]
+  "description": "This is a project developed by a group of students from Cotuca, created for Android and iOS platforms. It uses Angular, Capacitor, and Ionic technologies to provide a robust and efficient mobile app experience."
 }
