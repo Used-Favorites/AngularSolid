@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">Used Favorites</string>
-    <string name="title_activity_main">Used Favorites</string>
-    <string name="package_name">com.angular.solid</string>
-    <string name="custom_url_scheme">com.angular.solid</string>
-</resources>
