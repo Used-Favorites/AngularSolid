@@ -59,5 +59,4 @@ Contribuições são o que tornam a comunidade de código aberto um lugar incrí
 5. Abra um Pull Request 📬
 
 ---
-
 ⭐️ Não se esqueça de dar uma estrela ao projeto se o achou útil! ⭐️
