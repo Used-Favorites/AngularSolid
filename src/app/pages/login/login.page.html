@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header>
     <ion-title>Seu melhor espaço aqui!</ion-title>
     <ion-img src="../../../assets/image_login.svg" />
@@ -15,11 +15,33 @@
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
     </ion-item>
+    <ion-label
+      ><p>Esqueceu a senha? <a href="#">Clique aqui</a></p></ion-label
+    >
   </ion-list>
-  <ion-button expand="block" fill="outline" routerLink="/signup"
+  <br />
+  <ion-button expand="block" fill="solid" routerLink="/signup"
     >Entrar</ion-button
   >
-  <ion-label>
-    <p>não possui uma conta? <a href="/signup">Inscreva-se</a></p>
-  </ion-label>
+  <br />
+  <div class="others">
+    <ion-label>
+      <p>Não é registrado? <a href="/signup">Registra-se agora</a></p>
+    </ion-label>
+    <ion-item-divider />
+    <ion-label>
+      <p>Ou continuar com</p>
+    </ion-label>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon name="logo-google" />
+        </ion-button>
+        <ion-button>
+          <ion-icon name="logo-facebook" />
+        </ion-button>
+        <ion-button>
+          <ion-icon name="logo-apple" />
+        </ion-button>
+      </ion-buttons>
+  </div>
 </ion-content>

@@ -14,6 +14,7 @@ import {
   IonLabel,
   IonCheckbox,
 } from '@ionic/angular/standalone';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-sign-up',
@@ -36,10 +37,11 @@ import {
   ],
 })
 export class SignUpPage implements OnInit {
+  constructor(private navCtrl: NavController) {}
+
   signUp() {
     throw new Error('Method not implemented.');
   }
-  constructor() {}
 
   ngOnInit() {}
 }

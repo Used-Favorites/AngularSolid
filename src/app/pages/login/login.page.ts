@@ -18,7 +18,21 @@ import {
   IonLoading,
   IonList,
   IonInputPasswordToggle,
+  IonItemDivider,
+  IonText,
+  IonButtons,
 } from '@ionic/angular/standalone';
+
+import { addIcons } from 'ionicons';
+import { logoFacebook, logoGoogle, logoApple } from 'ionicons/icons';
+
+addIcons({
+  'logo-facebook': logoFacebook,
+  'logo-google': logoGoogle,
+  'logo-iphone': logoApple,
+});
+
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -26,6 +40,9 @@ import {
   styleUrls: ['./login.page.scss'],
   standalone: true,
   imports: [
+    IonButtons,
+    IonText,
+    IonItemDivider,
     IonList,
     IonLoading,
     IonIcon,
@@ -46,7 +63,7 @@ import {
   ],
 })
 export class LoginPage implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private navCtrl: NavController) {}
 
   ngOnInit() {}
 }

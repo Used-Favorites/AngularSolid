@@ -8,13 +8,15 @@ ion-content {
     border: none;
     -webkit-box-shadow: none;
     box-shadow: none;
+    height: 40%;
     ion-title {
-      display: inline;
+      display: contents;
       position: relative;
       width: fit-content;
       height: min-content;
       font-size: larger;
       font-weight: bold;
+      text-align: center;
     }
     ion-img {
       width: 85%;
@@ -33,12 +35,21 @@ ion-content {
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
-    gap: 16px;
+    gap: 1rem;
     background-color: transparent;
 
     margin: 0 auto;
     ion-item {
       --background: transparent;
+      width: 100%;
+    }
+    ion-label {
+      gap: 0;
+      font-size: 1rem;
+      font-weight: bold;
+      width: 100%;
+      text-align: right;
+      padding-right: 3%;
     }
   }
 
@@ -51,5 +62,31 @@ ion-content {
 
   ion-button {
     margin: 0 auto;
+  }
+
+  .others {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-self: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin: 0 auto;
+    * {
+      width: 100%;
+    }
+    ion-buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      ion-button {
+        ion-icon {
+          font-size: 2rem;
+        }
+      }
+    }
   }
 }
