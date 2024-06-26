@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 export interface User {
   id: number;
@@ -11,27 +13,35 @@ export interface User {
   providedIn: 'root',
 })
 export class UserService {
-  SERVER_URL = process.env['URL_API'] ?? 'http://localhost:3000/api/';
+  private apiEndpoint = environment.api_url ?? 'http://localhost:3000/';
 
   constructor(private http: HttpClient) {}
 
-  public getUsers() {
-    return this.http.get(`${this.SERVER_URL}users`);
+  public getUsers(): Observable<any> {
+    return this.http.get(`${this.apiEndpoint}users`);
   }
 
-  public getUser(userId: User['id']) {
-    return this.http.get(`${this.SERVER_URL}users/list/${userId}`);
+  public getUser(userId: User['id']): Observable<any> {
+    return this.http.get(`${this.apiEndpoint}users/list/${userId}`);
   }
 
-  public createUser(user: any) {
-    return this.http.post(`${this.SERVER_URL}users/create`, user);
+  public createUser(
+    email: string,
+    name: string,
+    password: string
+  ): Observable<any> {
+    return this.http.post(`${this.apiEndpoint}users/create`, {
+      email,
+      name,
+      password,
+    });
   }
 
-  public updateUser(user: any) {
-    return this.http.put(`${this.SERVER_URL}users/update/${user.id}`, user);
+  public updateUser(user: any): Observable<any> {
+    return this.http.put(`${this.apiEndpoint}users/update/${user.id}`, user);
   }
 
-  public deleteUser(userId: number) {
-    return this.http.delete(`${this.SERVER_URL}users/delete/${userId}`);
+  public deleteUser(userId: number): Observable<any> {
+    return this.http.delete(`${this.apiEndpoint}users/delete/${userId}`);
   }
 }

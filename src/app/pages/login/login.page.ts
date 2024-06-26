@@ -33,6 +33,7 @@ addIcons({
 });
 
 import { NavController } from '@ionic/angular';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -63,7 +64,16 @@ import { NavController } from '@ionic/angular';
   ],
 })
 export class LoginPage implements OnInit {
-  constructor(private navCtrl: NavController) {}
+  constructor(
+    private navCtrl: NavController,
+    private UserService: UserService
+  ) {}
 
   ngOnInit() {}
+
+  onLogin() {
+    this.UserService.getUsers().subscribe((users) => {
+      console.log(users);
+    });
+  }
 }
