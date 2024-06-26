@@ -5,12 +5,23 @@
   </ion-header>
   <ion-list>
     <ion-item lines="none">
-      <ion-input placeholder="favorite@sigma.com" type="email" fill="outline"
+      <ion-input
+        placeholder="favorite@sigma.com"
+        type="email"
+        fill="outline"
+        [(ngModel)]="email"
+        required
         >Endereço de Email</ion-input
       >
     </ion-item>
     <ion-item lines="none">
-      <ion-input type="password" placeholder="Senha" fill="outline">
+      <ion-input
+        type="password"
+        placeholder="Senha"
+        fill="outline"
+        [(ngModel)]="password"
+        required
+      >
         Senha
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
@@ -20,7 +31,11 @@
     >
   </ion-list>
   <br />
-  <ion-button expand="block" fill="solid" routerLink="/signup"
+  <ion-button
+    expand="block"
+    fill="solid"
+    routerLink="/signup"
+    (click)="onLogin()"
     >Entrar</ion-button
   >
   <br />
@@ -32,16 +47,16 @@
     <ion-label>
       <p>Ou continuar com</p>
     </ion-label>
-      <ion-buttons>
-        <ion-button>
-          <ion-icon name="logo-google" />
-        </ion-button>
-        <ion-button>
-          <ion-icon name="logo-facebook" />
-        </ion-button>
-        <ion-button>
-          <ion-icon name="logo-apple" />
-        </ion-button>
-      </ion-buttons>
+    <ion-buttons>
+      <ion-button>
+        <ion-icon name="logo-google" />
+      </ion-button>
+      <ion-button>
+        <ion-icon name="logo-facebook" />
+      </ion-button>
+      <ion-button>
+        <ion-icon name="logo-apple" />
+      </ion-button>
+    </ion-buttons>
   </div>
 </ion-content>

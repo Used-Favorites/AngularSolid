@@ -69,11 +69,14 @@ export class LoginPage implements OnInit {
     private UserService: UserService
   ) {}
 
+  email: string = '';
+  password: string = '';
+
   ngOnInit() {}
 
   onLogin() {
-    this.UserService.getUsers().subscribe((users) => {
-      console.log(users);
+    this.UserService.login(this.email, this.password).subscribe((user) => {
+      this.navCtrl.navigateForward('/home');
     });
   }
 }

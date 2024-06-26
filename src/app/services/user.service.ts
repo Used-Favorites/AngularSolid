@@ -5,19 +5,31 @@ import { Observable } from 'rxjs';
 
 export interface User {
   id: number;
-  name: string;
   email: string;
+  password: string;
+  name: string;
+  andreessId: number | null;
+  phone: string | null;
+  date_birth: Date;
+  AuditTrailId: number | null;
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private apiEndpoint = environment.api_url ?? 'http://localhost:3000/';
+  apiEndpoint = environment.api_url;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    if (!this.apiEndpoint) {
+      throw new Error('API endpoint is not defined');
+    }
+    console.log('apiEndpoint', this.apiEndpoint);
+    // Restante do código para fazer a requisição HTTP
+  }
 
   public getUsers(): Observable<any> {
+    console.log('apiEndpoint', this.apiEndpoint);
     return this.http.get(`${this.apiEndpoint}users`);
   }
 
@@ -43,5 +55,12 @@ export class UserService {
 
   public deleteUser(userId: number): Observable<any> {
     return this.http.delete(`${this.apiEndpoint}users/delete/${userId}`);
+  }
+
+  public login(email: string, password: string): Observable<any> {
+    return this.http.post(`${this.apiEndpoint}users/login`, {
+      email,
+      password,
+    });
   }
 }
