@@ -15,6 +15,7 @@ import {
   IonCheckbox,
 } from '@ionic/angular/standalone';
 import { NavController } from '@ionic/angular';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -37,10 +38,25 @@ import { NavController } from '@ionic/angular';
   ],
 })
 export class SignUpPage implements OnInit {
-  constructor(private navCtrl: NavController) {}
+  name: string = '';
+  email: string = '';
+  password: string = '';
+  passwordConfirm: string = '';
+  constructor(
+    private navCtrl: NavController,
+    private userService: UserService
+  ) {}
 
-  signUp() {
-    throw new Error('Method not implemented.');
+  onSignUp() {
+    this.userService.createUser(this.email, this.name, this.password).subscribe(
+      (response) => {
+        console.log('User created', response);
+        this.navCtrl.navigateForward('/login');
+      },
+      (error) => {
+        console.error('Error creating user', error);
+      }
+    );
   }
 
   ngOnInit() {}

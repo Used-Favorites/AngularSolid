@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export interface User {
   id: number;
@@ -33,8 +34,12 @@ export class UserService {
     return this.http.get(`${this.apiEndpoint}users`);
   }
 
-  public getUser(userId: User['id']): Observable<any> {
-    return this.http.get(`${this.apiEndpoint}users/list/${userId}`);
+  public getUser(userId: User['id']): Observable<User> {
+    // Especifica o tipo esperado como User
+    return this.http.get<User>(`${this.apiEndpoint}users/list/${userId}`);
+  }
+  public getUsername(userId: User['id']): Observable<string> {
+    return this.getUser(userId).pipe(map((user: User) => user.name));
   }
 
   public createUser(

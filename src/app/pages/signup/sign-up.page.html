@@ -12,16 +12,29 @@
         placeholder="Rafaela Barbosa de Souza"
         type="email"
         fill="outline"
+        [(ngModel)]="name"
+        [required]="true"
         >Nome</ion-input
       >
     </ion-item>
     <ion-item lines="none">
-      <ion-input type="email" placeholder="rafaela@email.com" fill="outline"
+      <ion-input
+        type="email"
+        placeholder="rafaela@email.com"
+        fill="outline"
+        [(ngModel)]="email"
+        [required]="true"
         >Endereço de Email</ion-input
       >
     </ion-item>
     <ion-item lines="none">
-      <ion-input type="password" placeholder="Crie sua Senha" fill="outline">
+      <ion-input
+        type="password"
+        placeholder="Crie sua Senha"
+        fill="outline"
+        required="true"
+        [(ngModel)]="password"
+      >
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
     </ion-item>
@@ -30,6 +43,8 @@
         type="password"
         placeholder="Confirme sua Senha"
         fill="outline"
+        required="true"
+        [(ngModel)]="passwordConfirm"
       >
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
@@ -45,7 +60,11 @@
     <a href="#" (click)="$event.NONE">Termos e Condições</a> e a
     <a href="#" (click)="$event.NONE">Política de Privacidade.</a>
   </ion-label>
-  <ion-button expand="block" fill="solid" routerLink="/signup"
+  <ion-button
+    expand="block"
+    fill="solid"
+    routerLink="/signup"
+    (click)="onSignUp()"
     >Cadastra-se</ion-button
   >
 </ion-content>

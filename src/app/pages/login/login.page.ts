@@ -75,8 +75,18 @@ export class LoginPage implements OnInit {
   ngOnInit() {}
 
   onLogin() {
-    this.UserService.login(this.email, this.password).subscribe((user) => {
-      this.navCtrl.navigateForward('/home');
-    });
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(this.email)) {
+    } else {
+      this.UserService.login(this.email, this.password).subscribe(
+        (Response) => {
+          console.log('User logged in', Response);
+          this.navCtrl.navigateForward('/home');
+        },
+        (error) => {
+          console.error('Error logging in', error);
+        }
+      );
+    }
   }
 }
